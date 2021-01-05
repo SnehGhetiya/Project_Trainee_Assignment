@@ -1,4 +1,4 @@
-# Project_Trainee_Assignment ![Badge-1](https://img.shields.io/badge/ASP-MVC--4.8-orange) ![Badge-2](https://img.shields.io/badge/Visual-C%23-lightgrey) ![Badge-3](https://img.shields.io/badge/bootstrap-v3.2.1-blue)
+# Vegefoods - Premium Platform of Product Management ![Badge-1](https://img.shields.io/badge/ASP-MVC--4.8-orange) ![Badge-2](https://img.shields.io/badge/Visual-C%23-lightgrey) ![Badge-3](https://img.shields.io/badge/bootstrap-v3.2.1-blue)
 
 ### Development Tools
 1. Visual Studio 2019

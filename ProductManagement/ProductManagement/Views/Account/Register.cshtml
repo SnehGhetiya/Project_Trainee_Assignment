@@ -1,0 +1,177 @@
+﻿@model ProductManagement.Models.tbl_User
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+    <title>Vegefoods - Register User</title>
+
+    <!-- Icons font CSS-->
+    <link href="/Content/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="/Content/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="/Content/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/Content/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/Content/css/main.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Content/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/Content/css/animate.css">
+    <link rel="stylesheet" href="/Content/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Content/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/Content/css/magnific-popup.css">
+    <link rel="stylesheet" href="/Content/css/aos.css">
+    <link rel="stylesheet" href="/Content/css/ionicons.min.css">
+    <link rel="stylesheet" href="/Content/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/Content/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="/Content/css/flaticon.css">
+    <link rel="stylesheet" href="/Content/css/icomoon.css">
+    <link rel="stylesheet" href="/Content/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Vegefoods</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="@Url.Action("Register", "Account")" class="nav-link">Register</a></li>
+                    <li class="nav-item"><a href="@Url.Action("Login", "Account")" class="nav-link">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    @using (Html.BeginForm(Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data" })))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </div>
+        <div class="page-wrapper bg-dark p-t-180 p-b-100 font-robo">
+            <div class="wrapper wrapper--w960">
+                <div class="card card-2">
+                    <div class="card-body">
+                        <h2 class="title" style="color:forestgreen;">SIGNUP</h2>
+                        <form method="POST">
+                            <div class="input-group">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                                <div class="input-group">
+                                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="p-t-30">
+                                    <button class="btn btn-outline-success btn--radius btn--green" style="width:80px; height:50px;" type="submit" onclick="location.href='@Url.Action("List", "Product")'">Sign Up</button>
+                                </div>
+                           </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Vegefoods</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-5">
+                        <h2 class="ftco-heading-2">Menu</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="py-2 d-block">Shop</a></li>
+                            <li><a href="#" class="py-2 d-block">About</a></li>
+                            <li><a href="#" class="py-2 d-block">Journal</a></li>
+                            <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Help</h2>
+                        <div class="d-flex">
+                            <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
+                                <li><a href="#" class="py-2 d-block">Shipping Information</a></li>
+                                <li><a href="#" class="py-2 d-block">Returns &amp; Exchange</a></li>
+                                <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
+                                <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="py-2 d-block">FAQs</a></li>
+                                <li><a href="#" class="py-2 d-block">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Have a Questions?</h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                                <li><a href="#"><span class="text">+2 392 3929 210</span></a></li>
+                                <li><a href="#"><span class="text"><span class="__cf_email__" data-cfemail="640d0a020b241d0b1116000b09050d0a4a070b09">contactvegefoods@gmail.com</span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Jquery JS-->
+    <script src="/Content/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="/Content/vendor/select2/select2.min.js"></script>
+    <script src="/Content/vendor/datepicker/moment.min.js"></script>
+    <script src="/Content/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="/Content/js/global.js"></script>
+    <script src="/Content/js/jquery.min.js"></script>
+    <script src="/Content/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/Content/js/popper.min.js"></script>
+    <script src="/Content/js/bootstrap.min.js"></script>
+    <script src="/Content/js/jquery.easing.1.3.js"></script>
+    <script src="/Content/js/jquery.waypoints.min.js"></script>
+    <script src="/Content/js/jquery.stellar.min.js"></script>
+    <script src="/Content/js/owl.carousel.min.js"></script>
+    <script src="/Content/js/jquery.magnific-popup.min.js"></script>
+    <script src="/Content/js/aos.js"></script>
+    <script src="/Content/js/jquery.animateNumber.min.js"></script>
+    <script src="/Content/js/bootstrap-datepicker.js"></script>
+    <script src="/Content/js/scrollax.min.js"></script>
+    <script src="/Content/js/google-map.js"></script>
+    <script src="/Content/js/main.js"></script>
+
+</body>

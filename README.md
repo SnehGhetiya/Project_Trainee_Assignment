@@ -78,3 +78,9 @@ You can also fetch data from the database by using WebApi link provided below.
 > https://localhost:44316/Home/Api
 
 It loads all products available into the database.
+
+---
+
+**STAY SAFE :mask: STAY HAPPY :smiley: !**
+
+**HAPPY CODING... :computer:**
